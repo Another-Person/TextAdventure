@@ -3,14 +3,10 @@
 #include <iostream>
 #include <time.h>
 #include <string>
+#include "RandNumGens.h"
 
-int RandInt(int minGen, int maxGen)
-{
-	std::default_random_engine generator(time(NULL));
-	std::uniform_int_distribution<int> distribution(minGen, maxGen);
-	int numberGenerated = distribution(generator);
-	return numberGenerated;
-}
+
+void RandEncounterNature();
 
 void GenerateLand()
 {
@@ -18,18 +14,22 @@ void GenerateLand()
 	if (randomLandTypeSelection == 1)
 	{
 		std::cout << "You are in a forest." << std::endl;
+		RandEncounterNature();
 	}
 	if (randomLandTypeSelection == 2)
 	{
 		std::cout << "You are in a plain." << std::endl;
+		RandEncounterNature();
 	}
 	if (randomLandTypeSelection == 3)
 	{
 		std::cout << "You are in a desert." << std::endl;
+		RandEncounterNature();
 	}
 	if (randomLandTypeSelection == 4)
 	{
 		std::cout << "You are in a tundra." << std::endl;
+		RandEncounterNature();
 	}
 }
 
@@ -77,26 +77,13 @@ void ParseCommands(std::string commandInput)
 	if (commandInput == "help")
 	{
 		std::cout << "Enter a command in the format <command> <argument>." << std::endl;
-		std::cout << "Example commands: Move, Help " << std::endl;
+		std::cout << "Example commands: move, help, exit " << std::endl;
 	}
 	if (commandInput == "move")
 	{
 		MoveCommand(GetCommandArgument());
 	}
-	if (commandInput == "Help")
-	{
-		std::cout << "Enter a command in the format <command> <argument>." << std::endl;
-		std::cout << "Example commands: Move, Help " << std::endl;
-	}
-	if (commandInput == "Move")
-	{
-		MoveCommand(GetCommandArgument());
-	}
 	if (commandInput == "exit")
-	{
-		exit(0);
-	}
-	if (commandInput == "Exit")
 	{
 		exit(0);
 	}
