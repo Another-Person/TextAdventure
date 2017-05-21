@@ -108,8 +108,7 @@ void ParseCommands(std::string commandInput)
 
 int main()
 {
-	int runProgram = 1;
-	while (runProgram == 1)
+	while (true)
 	{
 		std::string command = GetCommand();
 		ParseCommands(command);
