@@ -34,7 +34,7 @@ int RandEncounterMonster()
 {
 	int encounteredMonster = 0;
 	int chance = RandInt(1, 4);
-	if (chance == 4); // This appears to always be returning true... I moved 16 times and every time a monster appeared. Plz check out
+	if (chance == 4) 
 	{
 		encounteredMonster = 1;
 		int randomlySelectMonster = RandInt(1, 3);
