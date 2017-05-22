@@ -27,6 +27,9 @@
     <ClInclude Include="RandNumGens.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="RandomEncounters.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -35,10 +38,10 @@
     <ClCompile Include="TextAdventure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandomEncounters.cpp">
+    <ClCompile Include="RandNumGensSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandNumGensSource.cpp">
+    <ClCompile Include="RandomEncountersSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

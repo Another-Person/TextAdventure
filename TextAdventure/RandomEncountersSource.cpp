@@ -8,7 +8,7 @@
 void RandEncounterNature()
 {
 	int chance = RandInt(1, 3);
-	if (chance == 3)
+	if (chance == 3) 
 	{
 		int randomlySelectObject = RandInt(1, 4);
 		if (randomlySelectObject == 1)
@@ -28,4 +28,28 @@ void RandEncounterNature()
 			std::cout << "There are some rather fresh pawprints in the dirt besides you." << std::endl;
 		}
 	}
+}
+
+int RandEncounterMonster()
+{
+	int encounteredMonster = 0;
+	int chance = RandInt(1, 4);
+	if (chance == 4); // This appears to always be returning true... I moved 16 times and every time a monster appeared. Plz check out
+	{
+		encounteredMonster = 1;
+		int randomlySelectMonster = RandInt(1, 3);
+		if (randomlySelectMonster == 1)
+		{
+			std::cout << "An orc appeared from a nearby cave!" << std::endl;
+		}
+		if (randomlySelectMonster == 2)
+		{
+			std::cout << "A giant spider crawled up behind you!" << std::endl;
+		}
+		if (randomlySelectMonster == 3)
+		{
+			std::cout << "A troll slowly lumbers up next to you!" << std::endl;
+		}
+	}
+	return encounteredMonster;
 }

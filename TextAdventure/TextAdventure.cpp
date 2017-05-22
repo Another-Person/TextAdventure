@@ -4,9 +4,7 @@
 #include <time.h>
 #include <string>
 #include "RandNumGens.h"
-
-
-void RandEncounterNature();
+#include "RandomEncounters.h"
 
 void GenerateLand()
 {
@@ -15,21 +13,25 @@ void GenerateLand()
 	{
 		std::cout << "You are in a forest." << std::endl;
 		RandEncounterNature();
+		int encounteredMonster = RandEncounterMonster();
 	}
 	if (randomLandTypeSelection == 2)
 	{
 		std::cout << "You are in a plain." << std::endl;
 		RandEncounterNature();
+		int encounteredMonster = RandEncounterMonster();
 	}
 	if (randomLandTypeSelection == 3)
 	{
 		std::cout << "You are in a desert." << std::endl;
 		RandEncounterNature();
+		int encounteredMonster = RandEncounterMonster();
 	}
 	if (randomLandTypeSelection == 4)
 	{
 		std::cout << "You are in a tundra." << std::endl;
 		RandEncounterNature();
+		int encounteredMonster = RandEncounterMonster();
 	}
 }
 
