@@ -30,7 +30,10 @@
     <ClInclude Include="RandomEncounters.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="PlayerVarsDefine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFuncDefine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
