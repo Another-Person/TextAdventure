@@ -5,6 +5,10 @@
 #include <string>
 #include "RandNumGens.h"
 #include "RandomEncounters.h"
+#include "PlayerVarsDefine.h"
+#include "PlayerFuncDefine.h"
+
+extern PlayerVars Player{ 20 };
 
 void GenerateLand()
 {
@@ -89,6 +93,10 @@ void ParseCommands(std::string commandInput)
 	{
 		exit(0);
 	}
+	if (commandInput == "check")
+	{
+		CheckCommand(GetCommandArgument());
+	}
 /*	else
 	{
 		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance." << std::endl;
@@ -97,6 +105,7 @@ void ParseCommands(std::string commandInput)
 
 int main()
 {
+	PlayerVars Player{ 20 };
 	while (true)
 	{
 		std::string command = GetCommand();
