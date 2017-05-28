@@ -1,6 +1,12 @@
 #ifndef PLAYERVARSDEFINE_H
 #define PLAYERVARSDEFINE_H
 
+enum class PlayerCheckCommandArgs
+{
+	HEALTH,
+	INV
+};
+
 struct PlayerVars
 {
     int health;
