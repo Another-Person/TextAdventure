@@ -16,20 +16,23 @@ void CheckInvCommand()
 	std::cout << "You have nothing in your inventory." << std::endl;
 }
 
+PlayerCheckCommandArgs CheckArgStringEnumConvert(std::string input)
+{
+	if (input == "health")
+		return PlayerCheckCommandArgs::HEALTH;
+	else if (input == "inv")
+		return PlayerCheckCommandArgs::INV;
+	else
+	{
+		// No return value here; blank return leads to default path for invalid input handling
+	}
+}
+
+
 void CheckCommand(std::string input)
 {
-	
-	if (input == "health")
-	{
-		CheckHealthCommand();
-	}
-	if (input == "inv")
-	{
-		CheckInvCommand();
-	}
-	// This block doesn't work yet; I havent made the input the enum so it just uses a test variable so it compiles correctly
-	PlayerCheckCommandArgs testing = PlayerCheckCommandArgs::HEALTH;
-	switch (testing)
+	PlayerCheckCommandArgs argument = CheckArgStringEnumConvert(input);
+	switch (argument)
 	{
 	case PlayerCheckCommandArgs::HEALTH:
 		CheckHealthCommand();

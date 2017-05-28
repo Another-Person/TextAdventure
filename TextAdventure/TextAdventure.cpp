@@ -29,33 +29,6 @@ enum class Commands
 void GenerateLand()
 {
 	int randomLandTypeSelection = RandInt(1,4);
-	/* Commenting out working if block until new switch block below is working
-	if (randomLandTypeSelection == 1)
-	{
-		std::cout << "You are in a forest." << std::endl;
-		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
-	}
-	if (randomLandTypeSelection == 2)
-	{
-		std::cout << "You are in a plain." << std::endl;
-		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
-	}
-	if (randomLandTypeSelection == 3)
-	{
-		std::cout << "You are in a desert." << std::endl;
-		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
-	}
-	if (randomLandTypeSelection == 4)
-	{
-		std::cout << "You are in a tundra." << std::endl;
-		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
-	}
-	*/
-
 	switch (randomLandTypeSelection)
 	{
 	case 1:
@@ -107,32 +80,42 @@ std::string GetCommandArgument()
 	return tempString;
 }
 
+MoveCommandArgs MoveArgsStringEnumConvert(std::string input)
+{
+	if (input == "north")
+		return MoveCommandArgs::NORTH;
+	else if (input == "east")
+		return MoveCommandArgs::EAST;
+	else if (input == "west")
+		return MoveCommandArgs::WEST;
+	else if (input == "south")
+		return MoveCommandArgs::SOUTH;
+	else
+	{
+		// No return here; blank return leads to default path for invalid input handling
+	}
+}
+
+Commands CommandsStringEnumConvert(std::string input)
+{
+	if (input == "check")
+		return Commands::CHECK;
+	else if (input == "exit")
+		return Commands::EXIT;
+	else if (input == "help")
+		return Commands::HELP;
+	else if (input == "move")
+		return Commands::MOVE;
+	else
+	{
+		// No return here; blank return leads to default path for invalid input handling
+	}
+}
+
 void MoveCommand(std::string direction)
 {
-	if (direction == "north")
-	{
-		std::cout << "You moved north." << std::endl;
-		GenerateLand();
-	}
-	if (direction == "east")
-	{
-		std::cout << "You moved east." << std::endl;
-		GenerateLand();
-	}
-	if (direction == "south")
-	{
-		std::cout << "You moved south." << std::endl;
-		GenerateLand();
-	}
-	if (direction == "west")
-	{
-		std::cout << "You moved west." << std::endl;
-		GenerateLand();
-	}
-
-	// Switch block doesn't really work yet as input isn't the enum it needs
-	MoveCommandArgs testing = MoveCommandArgs::EAST;
-	switch (testing)
+	MoveCommandArgs argument = MoveArgsStringEnumConvert(direction);
+	switch (argument)
 	{
 	case MoveCommandArgs::NORTH:
 		std::cout << "You moved north." << std::endl;
@@ -158,31 +141,8 @@ void MoveCommand(std::string direction)
 
 void ParseCommands(std::string commandInput)
 {
-	if (commandInput == "help")
-	{
-		std::cout << "Enter a command in the format <command> <argument>." << std::endl;
-		std::cout << "Example commands: move, help, exit " << std::endl;
-	}
-	if (commandInput == "move")
-	{
-		MoveCommand(GetCommandArgument());
-	}
-	if (commandInput == "exit")
-	{
-		exit(0);
-	}
-	if (commandInput == "check")
-	{
-		CheckCommand(GetCommandArgument());
-	}
-/*	else
-	{
-		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance." << std::endl;
-	} */
-
-	// This doesn't really work right now; just uses a testing variable because I haven't made input the enum yet
-	Commands testing = Commands::HELP;
-	switch (testing)
+	Commands command = CommandsStringEnumConvert(commandInput);
+	switch (command)
 	{
 	case Commands::MOVE:
 		MoveCommand(GetCommandArgument());
