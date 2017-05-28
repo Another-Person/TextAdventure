@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "RandNumGens.h"
-#include "PlayerVarsDefine.h"
+#include "PlayerVars.h"
 
 extern PlayerVars Player;
 

@@ -5,7 +5,7 @@
 #include <string>
 #include "RandNumGens.h"
 #include "RandomEncounters.h"
-#include "PlayerVarsDefine.h"
+#include "PlayerVars.h"
 #include "PlayerFuncDefine.h"
 
 extern PlayerVars Player{ 20 };

@@ -139,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayerFuncDefine.h" />
-    <ClInclude Include="PlayerVarsDefine.h" />
+    <ClInclude Include="PlayerVars.h" />
     <ClInclude Include="RandNumGens.h" />
     <ClInclude Include="RandomEncounters.h" />
     <ClInclude Include="stdafx.h" />
@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlayerSource.cpp" />
+    <ClCompile Include="PlayerVarSource.cpp" />
     <ClCompile Include="RandNumGensSource.cpp" />
     <ClCompile Include="RandomEncountersSource.cpp" />
     <ClCompile Include="stdafx.cpp">

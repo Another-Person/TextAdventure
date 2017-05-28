@@ -30,10 +30,10 @@
     <ClInclude Include="RandomEncounters.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerVarsDefine.h">
+    <ClInclude Include="PlayerFuncDefine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerFuncDefine.h">
+    <ClInclude Include="PlayerVars.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayerSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerVarSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
