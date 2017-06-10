@@ -8,8 +8,6 @@
 #include "PlayerVars.h"
 #include "PlayerFuncDefine.h"
 
-extern PlayerVars Player{ 20 };
-
 enum class MoveCommandArgs
 {
 	NORTH,

@@ -4,11 +4,9 @@
 #include "RandNumGens.h"
 #include "PlayerVars.h"
 
-extern PlayerVars Player;
-
 void CheckHealthCommand()
 {
-	std::cout << "You have " << Player.health << " health remaining." << std::endl;
+	std::cout << "You have " << GetPlayerHealth() << " health remaining." << std::endl;
 }
 
 void CheckInvCommand()

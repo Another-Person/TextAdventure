@@ -13,4 +13,11 @@ struct PlayerVars
     int invObjects[10]; // 10 slots of inventory space for our player
 };
 
+int GetPlayerHealth();
+
+void AddToPlayerHealth(int amount);
+
+void SubtractFromPlayerHealth(int amount);
+
+
 #endif PLAYERSVARSDEFINE_H

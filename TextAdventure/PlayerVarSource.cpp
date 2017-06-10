@@ -8,8 +8,13 @@ int GetPlayerHealth()
 	return Player.health;
 }
 
-// Encapsulation functions for the global bariable
+// Encapsulation functions for the global variable
 void AddToPlayerHealth(int amount)
 {
 	Player.health = Player.health + amount;
+}
+
+void SubtractFromPlayerHealth(int amount)
+{
+	Player.health = Player.health - amount;
 }
