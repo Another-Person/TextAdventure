@@ -11,7 +11,9 @@ void CheckHealthCommand()
 
 void CheckInvCommand()
 {
-	std::cout << "You have nothing in your inventory." << std::endl;
+	std::cout << "You have the following items in your inventory: " << std::endl; 
+	PrintPlayerInvStrings();
+	std::cout << std::endl;
 }
 
 PlayerCheckCommandArgs CheckArgStringEnumConvert(std::string input)

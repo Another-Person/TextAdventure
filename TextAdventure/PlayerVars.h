@@ -20,5 +20,10 @@ void AddToPlayerHealth(int amount);
 
 void SubtractFromPlayerHealth(int amount);
 
+void PrintPlayerInvIDs();
+
+std::string InvObjIDToString(int objID);
+
+void PrintPlayerInvStrings();
 
 #endif PLAYERSVARSDEFINE_H

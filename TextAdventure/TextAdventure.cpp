@@ -162,7 +162,6 @@ void ParseCommands(std::string commandInput)
 
 int main()
 {
-	PlayerVars Player{ 20 };
 	while (true)
 	{
 		std::string command = GetCommand();
