@@ -78,3 +78,8 @@ void AddItemToInv(int objID)
 		}
 	}
 }
+
+void SetFighting(bool isFighting)
+{
+	Player.isFighting = isFighting;
+}

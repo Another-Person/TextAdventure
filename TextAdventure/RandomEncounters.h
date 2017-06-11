@@ -3,6 +3,6 @@
 
 void RandEncounterNature();
 
-int RandEncounterMonster();
+bool RandEncounterMonster();
 
 #endif RANDOMENCOUNTERS_H

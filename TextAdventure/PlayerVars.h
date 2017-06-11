@@ -11,7 +11,8 @@ enum class PlayerCheckCommandArgs
 struct PlayerVars
 {
     int health;
-	std::array<int, 10> invObjects = { }; // Sets 10 empty slots of inventory space for our pla
+	std::array<int, 10> invObjects = { }; // Sets 10 empty slots of inventory space for our player
+	bool isFighting = false;
 };
 
 int GetPlayerHealth();
@@ -27,5 +28,7 @@ std::string InvObjIDToString(int objID);
 void PrintPlayerInvStrings();
 
 void AddItemToInv(int objID);
+
+void SetFighting(bool isFighting);
 
 #endif PLAYERSVARSDEFINE_H

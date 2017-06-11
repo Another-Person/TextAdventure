@@ -33,13 +33,13 @@ void RandEncounterNature()
 	}
 }
 
-int RandEncounterMonster()
+bool RandEncounterMonster()
 {
-	int encounteredMonster = 0;
+	bool encounteredMonster = false;
 	int chance = RandInt(1, 4);
 	if (chance == 4) 
 	{
-		encounteredMonster = 1;
+		encounteredMonster = true;
 		int randomlySelectMonster = RandInt(1, 3);
 		switch (randomlySelectMonster)
 		{

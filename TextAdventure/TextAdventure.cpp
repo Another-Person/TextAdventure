@@ -33,28 +33,28 @@ void GenerateLand()
 	{
 		std::cout << "You are in a forest." << std::endl;
 		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
+		SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 2:
 	{
 		std::cout << "You are in a plain." << std::endl;
 		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
+		SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 3:
 	{
 		std::cout << "You are in a desert." << std::endl;
 		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
+		SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 4:
 	{
 		std::cout << "You are in a tundra." << std::endl;
 		RandEncounterNature();
-		int encounteredMonster = RandEncounterMonster();
+		SetFighting(RandEncounterMonster());
 		break;
 	}
 	default:
