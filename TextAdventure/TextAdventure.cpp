@@ -166,6 +166,7 @@ int main()
 	{
 		std::string command = GetCommand();
 		ParseCommands(command);
+	//	AddItemToInv(1);
 	}
     return 0;
 }

@@ -26,4 +26,6 @@ std::string InvObjIDToString(int objID);
 
 void PrintPlayerInvStrings();
 
+void AddItemToInv(int objID);
+
 #endif PLAYERSVARSDEFINE_H
