@@ -36,6 +36,9 @@
     <ClInclude Include="PlayerVars.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Monsters.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayerVarSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MonstersSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

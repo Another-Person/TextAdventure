@@ -83,3 +83,18 @@ void SetFighting(bool isFighting)
 {
 	Player.isFighting = isFighting;
 }
+
+bool GetIsFighting()
+{
+	return Player.isFighting;
+}
+
+Monsters GetWhatFighting()
+{
+	return Player.whatFighting;
+}
+
+void SetWhatFighting(Monsters whatFighting)
+{
+	Player.whatFighting = whatFighting;
+}

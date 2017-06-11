@@ -4,6 +4,7 @@
 #include <time.h>
 #include <string>
 #include "RandNumGens.h"
+#include "PlayerVars.h"
 
 void RandEncounterNature()
 {
@@ -45,12 +46,15 @@ bool RandEncounterMonster()
 		{
 		case 1:
 			std::cout << "An orc appeared from a nearby cave!" << std::endl;
+			SetWhatFighting(Monsters::ORC);
 			break;
 		case 2:
 			std::cout << "A giant spider crawled up behind you!" << std::endl;
+			SetWhatFighting(Monsters::GIANTSPIDER);
 			break;
 		case 3:
 			std::cout << "A troll slowly lumbers up next to you!" << std::endl;
+			SetWhatFighting(Monsters::TROLL);
 			break;
 		default:
 			std::cout << "ERROR: Something went wrong. Debug info: RandomEncountersSource.RandEncounterMonster.randomlySelectMonster.OUTOFRANGE" << std::endl;

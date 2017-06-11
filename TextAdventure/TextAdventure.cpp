@@ -21,6 +21,7 @@ enum class Commands
 	MOVE,
 	HELP,
 	CHECK,
+	FIGHT,
 	EXIT
 };
 
@@ -104,6 +105,8 @@ Commands CommandsStringEnumConvert(std::string input)
 		return Commands::HELP;
 	else if (input == "move")
 		return Commands::MOVE;
+	else if (input == "fight")
+		return Commands::FIGHT;
 	else
 	{
 		// No return here; blank return leads to default path for invalid input handling
@@ -151,6 +154,9 @@ void ParseCommands(std::string commandInput)
 		break;
 	case Commands::CHECK:
 		CheckCommand(GetCommandArgument());
+		break;
+	case Commands::FIGHT:
+		FightCommand(GetIsFighting());
 		break;
 	case Commands::EXIT:
 		exit(0);

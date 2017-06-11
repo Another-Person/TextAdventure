@@ -45,3 +45,16 @@ void CheckCommand(std::string input)
 		break;
 	}
 }
+
+void FightCommand(bool isFighting)
+{
+	if (isFighting == true)
+	{
+		// placeholder
+		SetFighting(false);
+	}
+	else
+	{
+		std::cout << "You prepare yourself to battle, only to realize that you have nothing to fight." << std::endl;
+	}
+}

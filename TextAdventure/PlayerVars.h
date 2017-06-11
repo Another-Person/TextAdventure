@@ -1,6 +1,7 @@
 #ifndef PLAYERVARSDEFINE_H
 #define PLAYERVARSDEFINE_H
 #include <array>
+#include "Monsters.h"
 
 enum class PlayerCheckCommandArgs
 {
@@ -13,6 +14,7 @@ struct PlayerVars
     int health;
 	std::array<int, 10> invObjects = { }; // Sets 10 empty slots of inventory space for our player
 	bool isFighting = false;
+	Monsters whatFighting;
 };
 
 int GetPlayerHealth();
@@ -30,5 +32,11 @@ void PrintPlayerInvStrings();
 void AddItemToInv(int objID);
 
 void SetFighting(bool isFighting);
+
+bool GetIsFighting();
+
+Monsters GetWhatFighting();
+
+void SetWhatFighting(Monsters whatFighting);
 
 #endif PLAYERSVARSDEFINE_H

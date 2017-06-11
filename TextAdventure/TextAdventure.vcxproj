@@ -138,6 +138,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Monsters.h" />
     <ClInclude Include="PlayerFuncDefine.h" />
     <ClInclude Include="PlayerVars.h" />
     <ClInclude Include="RandNumGens.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MonstersSource.cpp" />
     <ClCompile Include="PlayerSource.cpp" />
     <ClCompile Include="PlayerVarSource.cpp" />
     <ClCompile Include="RandNumGensSource.cpp" />
