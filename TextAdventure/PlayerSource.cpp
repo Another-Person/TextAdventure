@@ -3,6 +3,7 @@
 #include <string>
 #include "RandNumGens.h"
 #include "PlayerVars.h"
+#include "Monsters.h"
 
 void CheckHealthCommand()
 {
@@ -51,6 +52,29 @@ void FightCommand(bool isFighting)
 	if (isFighting == true)
 	{
 		// placeholder
+	/*	GenericMobTemplate mobBeingFought;
+		switch (GetWhatFighting())
+		{
+			case Monsters::ORC:
+				Orc orc;
+				mobBeingFought.health = orc.health;
+				mobBeingFought.damage = orc.damage;
+				break;
+			case Monsters::GIANTSPIDER:
+				GiantSpider giantspider;
+				mobBeingFought.health = giantspider.health;
+				mobBeingFought.damage = giantspider.damage;
+				break;
+			case Monsters::TROLL:
+				Troll troll;
+				mobBeingFought.health = troll.health;
+				mobBeingFought.damage = troll.damage;
+				break;
+			default:
+				std::cout << "ERROR: Something went wrong. Debug info: PlayerSource.FightCommand.GetWhatFighting.INVALIDENEMYRETURNED" << std::endl;
+				exit(1);
+		}
+		*/
 		SetFighting(false);
 	}
 	else

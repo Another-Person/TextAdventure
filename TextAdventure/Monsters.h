@@ -26,4 +26,10 @@ struct Troll
 	int damage = 10;
 };
 
+struct GenericMobTemplate
+{
+	int health;
+	int damage;
+};
+
 #endif MONSTERS_H

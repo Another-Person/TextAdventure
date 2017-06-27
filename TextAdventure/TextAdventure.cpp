@@ -172,7 +172,7 @@ int main()
 	{
 		std::string command = GetCommand();
 		ParseCommands(command);
-	//	AddItemToInv(1);
+	//	AddItemToInv(1);  Here for testing purposes only; should be removed when no longer needed
 	}
     return 0;
 }
