@@ -28,8 +28,19 @@ struct Troll
 
 struct GenericMobTemplate
 {
+	Monsters whichMonster;
 	int health;
 	int damage;
 };
+
+void SetcurrentMobValues(Monsters monster);
+
+void SubtractFromcurrentMobHealth(int amount);
+
+void AddTocurrentMobHealth(int amount);
+
+int GetcurrentMobHealth();
+
+int GetcurrentMobDamage();
 
 #endif MONSTERS_H
