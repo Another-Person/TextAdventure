@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Monsters.h" />
     <ClInclude Include="PlayerFuncDefine.h" />
+    <ClInclude Include="PlayerInvItems.h" />
     <ClInclude Include="PlayerVars.h" />
     <ClInclude Include="RandNumGens.h" />
     <ClInclude Include="RandomEncounters.h" />

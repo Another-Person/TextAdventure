@@ -39,6 +39,9 @@
     <ClInclude Include="Monsters.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerInvItems.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -2,6 +2,7 @@
 #define PLAYERVARSDEFINE_H
 #include <array>
 #include "Monsters.h"
+#include "PlayerInvItems.h"
 
 enum class PlayerCheckCommandArgs
 {
