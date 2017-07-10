@@ -3,6 +3,7 @@
 
 enum class Monsters
 {
+	BLANKMONSTER,
 	ORC,
 	GIANTSPIDER,
 	TROLL

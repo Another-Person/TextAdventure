@@ -53,3 +53,15 @@ int GetcurrentMobDamage()
 {
 	return currentMob.damage;
 }
+
+Monsters GetcurrentMobwhichMonster()
+{
+	return currentMob.whichMonster;
+}
+
+void ClearcurrentMobValues()
+{
+	currentMob.whichMonster = Monsters::BLANKMONSTER;
+	currentMob.health = 0;
+	currentMob.damage = 0;
+}
