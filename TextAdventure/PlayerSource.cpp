@@ -53,8 +53,16 @@ void FightCommand(bool isFighting)
 {
 	if (isFighting == true)
 	{
-		// placeholder
-		thePlayer.SetFighting(false);
+		if (thePlayer.GetwhatFighting != Monsters::BLANKMONSTER)
+		{
+			
+		}
+		else
+		{
+			std::cout << "ERROR: Something went wrong. Debug info: PlayerSource.FightCommand.INVALIDMONSTERBATTLE" << std::endl;
+			exit(1);
+		}
+		thePlayer.SetFighting(false); // Maybe move somewhere else (end of first if branch?)
 	}
 	else
 	{
