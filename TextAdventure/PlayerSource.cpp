@@ -5,15 +5,17 @@
 #include "PlayerVars.h"
 #include "Monsters.h"
 
+extern Player thePlayer;
+
 void CheckHealthCommand()
 {
-	std::cout << "You have " << GetPlayerHealth() << " health remaining." << std::endl;
+	std::cout << "You have " << thePlayer.GetPlayerHealth() << " health remaining.\n";
 }
 
 void CheckInvCommand()
 {
-	std::cout << "You have the following items in your inventory: " << std::endl; 
-	PrintPlayerInvStrings();
+	std::cout << "You have the following items in your inventory: \n"; 
+	thePlayer.PrintPlayerInvStrings();
 	std::cout << std::endl;
 }
 
@@ -42,7 +44,7 @@ void CheckCommand(std::string input)
 		CheckInvCommand();
 		break;
 	default:
-		std::cout << "Sorry, this argument isn't valid." << std::endl;
+		std::cout << "Sorry, this argument isn't valid. \n";
 		break;
 	}
 }
@@ -52,10 +54,10 @@ void FightCommand(bool isFighting)
 	if (isFighting == true)
 	{
 		// placeholder
-		SetFighting(false);
+		thePlayer.SetFighting(false);
 	}
 	else
 	{
-		std::cout << "You prepare yourself to battle, only to realize that you have nothing to fight." << std::endl;
+		std::cout << "You prepare yourself to battle, only to realize that you have nothing to fight.\n";
 	}
 }

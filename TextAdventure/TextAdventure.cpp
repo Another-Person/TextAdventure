@@ -8,6 +8,8 @@
 #include "PlayerVars.h"
 #include "PlayerFuncDefine.h"
 
+Player thePlayer;
+
 enum class MoveCommandArgs
 {
 	NORTH,
@@ -32,30 +34,30 @@ void GenerateLand()
 	{
 	case 1:
 	{
-		std::cout << "You are in a forest." << std::endl;
+		std::cout << "You are in a forest.\n";
 		RandEncounterNature();
-		SetFighting(RandEncounterMonster());
+		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 2:
 	{
-		std::cout << "You are in a plain." << std::endl;
+		std::cout << "You are in a plain.\n";
 		RandEncounterNature();
-		SetFighting(RandEncounterMonster());
+		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 3:
 	{
-		std::cout << "You are in a desert." << std::endl;
+		std::cout << "You are in a desert.\n";
 		RandEncounterNature();
-		SetFighting(RandEncounterMonster());
+		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
 	case 4:
 	{
-		std::cout << "You are in a tundra." << std::endl;
+		std::cout << "You are in a tundra. \n";
 		RandEncounterNature();
-		SetFighting(RandEncounterMonster());
+		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
 	default:
@@ -119,23 +121,23 @@ void MoveCommand(std::string direction)
 	switch (argument)
 	{
 	case MoveCommandArgs::NORTH:
-		std::cout << "You moved north." << std::endl;
+		std::cout << "You moved north.\n";
 		GenerateLand();
 		break;
 	case MoveCommandArgs::EAST:
-		std::cout << "You moved east." << std::endl;
+		std::cout << "You moved east.\n";
 		GenerateLand();
 		break;
 	case MoveCommandArgs::SOUTH:
-		std::cout << "You moved south." << std::endl;
+		std::cout << "You moved south.\n";
 		GenerateLand();
 		break;
 	case MoveCommandArgs::WEST:
-		std::cout << "You moved west." << std::endl;
+		std::cout << "You moved west. \n";
 		GenerateLand();
 		break;
 	default:
-		std::cout << "Sorry, invalid direction. Please use compass directions (north, east, south, west)." << std::endl;
+		std::cout << "Sorry, invalid direction. Please use compass directions (north, east, south, west).\n";
 		break;
 	}
 }
@@ -149,19 +151,19 @@ void ParseCommands(std::string commandInput)
 		MoveCommand(GetCommandArgument());
 		break;
 	case Commands::HELP:
-		std::cout << "Enter a command in the format <command> <argument>." << std::endl;
-		std::cout << "Example commands: move, help, exit " << std::endl;
+		std::cout << "Enter a command in the format <command> <argument>.\n";
+		std::cout << "Example commands: move, help, exit \n";
 		break;
 	case Commands::CHECK:
 		CheckCommand(GetCommandArgument());
 		break;
 	case Commands::FIGHT:
-		FightCommand(GetIsFighting());
+		FightCommand(thePlayer.GetisFighting());
 		break;
 	case Commands::EXIT:
 		exit(0);
 	default:
-		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance." << std::endl;
+		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance.\n";
 		break;
 	}
 }
@@ -172,7 +174,6 @@ int main()
 	{
 		std::string command = GetCommand();
 		ParseCommands(command);
-	//	AddItemToInv(1);  Here for testing purposes only; should be removed when no longer needed
 	}
     return 0;
 }

@@ -59,9 +59,6 @@
     <ClCompile Include="PlayerSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerVarSource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MonstersSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
