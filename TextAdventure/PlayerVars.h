@@ -22,29 +22,26 @@ private:
 
 public:
 	// Constructor for priv variables
-	Player(int startHealth = 20, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER)
+	Player(int startHealth = 20, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }
 	{
-		health = startHealth;
-		isFighting = fighting;
-		whatFighting = startFighting;
 	}
 
-	int GetPlayerHealth() // Returns current amount of health player has
+	int GetPlayerHealth()  // Returns current amount of health player has
 	{
 		return health;
 	}
 
-	void AddToPlayerHealth(int amount)
+	void AddToPlayerHealth(int amount)  // Adds a given amount of health to the player.
 	{
 		health = health + amount;
 	}
 
-	void SubtractFromPlayerHealth(int amount)
+	void SubtractFromPlayerHealth(int amount)  // Takes away a given amount of health from the player.
 	{
 		health = health - amount;
 	}
 
-	std::string invObjIDToString(int objID)
+	std::string invObjIDToString(int objID)  // Converts the raw int objID's stored in the player inv into text strings.
 	{
 		switch (objID)
 		{
@@ -60,13 +57,13 @@ public:
 		}
 	}
 
-	void PrintPlayerInvStrings()
+	void PrintPlayerInvStrings()  // Prints out the player inventory as a list of text strings.
 	{
 		for (int invSlot = 0; invSlot < invObjects.size(); ++invSlot)
 			std::cout << "Slot " << invSlot + 1 << ": " << invObjIDToString(invObjects.at(invSlot)) << std::endl;
 	}
 	
-	void AddItemToInv(int objID)
+	void AddItemToInv(int objID)  // Adds an item to the player's inventory in the first open slot. If none is open, prompts the player to choose a slot to replace with the new item. | TODO: 1. List what is in the chosen slot and confirm choice 2. Add an option to not replace any slot if full
 	{
 		bool invIsFull;
 		for (int invSlot = 0; invSlot < invObjects.size(); ++invSlot)
@@ -97,22 +94,22 @@ public:
 		}
 	}
 
-	void SetFighting(bool fightingState)
+	void SetFighting(bool fightingState)  // Sets the isFighting variable to the given state.
 	{
 		isFighting = fightingState;
 	}
 
-	bool GetisFighting()
+	bool GetisFighting()  // Returns the current state of isFighting.
 	{
 		return isFighting;
 	}
 
-	Monsters GetwhatFighting()
+	Monsters GetwhatFighting()  // Returns the current value of whatFighting.
 	{
 		return whatFighting;
 	}
 
-	void SetwhatFighting(Monsters fighting)
+	void SetwhatFighting(Monsters fighting)  // Sets the whatFighting variable to a given value.
 	{
 		whatFighting = fighting;
 	}

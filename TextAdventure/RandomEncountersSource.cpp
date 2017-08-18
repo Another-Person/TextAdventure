@@ -6,6 +6,7 @@
 #include "RandNumGens.h"
 #include "PlayerVars.h"
 
+extern CurrentMob currentMob;
 extern Player thePlayer;
 
 void RandEncounterNature()
@@ -49,17 +50,17 @@ bool RandEncounterMonster()
 		case 1:
 			std::cout << "An orc appeared from a nearby cave!" << std::endl;
 			thePlayer.SetwhatFighting(Monsters::ORC);
-			SetcurrentMobValues(Monsters::ORC);
+			currentMob.setCurrentMobValues(Monsters::ORC);
 			break;
 		case 2:
 			std::cout << "A giant spider crawled up behind you!" << std::endl;
 			thePlayer.SetwhatFighting(Monsters::GIANTSPIDER);
-			SetcurrentMobValues(Monsters::GIANTSPIDER);
+			currentMob.setCurrentMobValues(Monsters::GIANTSPIDER);
 			break;
 		case 3:
 			std::cout << "A troll slowly lumbers up next to you!" << std::endl;
 			thePlayer.SetwhatFighting(Monsters::TROLL);
-			SetcurrentMobValues(Monsters::TROLL);
+			currentMob.setCurrentMobValues(Monsters::TROLL);
 			break;
 		default:
 			std::cout << "ERROR: Something went wrong. Debug info: RandomEncountersSource.RandEncounterMonster.randomlySelectMonster.OUTOFRANGE" << std::endl;

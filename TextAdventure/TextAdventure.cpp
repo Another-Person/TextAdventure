@@ -8,6 +8,7 @@
 #include "PlayerVars.h"
 #include "PlayerFuncDefine.h"
 
+CurrentMob currentMob;
 Player thePlayer;
 
 enum class MoveCommandArgs
@@ -158,7 +159,7 @@ void ParseCommands(std::string commandInput)
 		CheckCommand(GetCommandArgument());
 		break;
 	case Commands::FIGHT:
-		FightCommand(thePlayer.GetisFighting());
+		FightCommand(thePlayer.GetisFighting(), thePlayer.GetwhatFighting);
 		break;
 	case Commands::EXIT:
 		exit(0);

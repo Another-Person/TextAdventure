@@ -5,6 +5,7 @@
 #include "PlayerVars.h"
 #include "Monsters.h"
 
+extern CurrentMob currentMob;
 extern Player thePlayer;
 
 void CheckHealthCommand()
@@ -49,11 +50,11 @@ void CheckCommand(std::string input)
 	}
 }
 
-void FightCommand(bool isFighting)
+void FightCommand(bool isFighting, Monsters whatFighting)
 {
 	if (isFighting == true)
 	{
-		if (thePlayer.GetwhatFighting != Monsters::BLANKMONSTER)
+		if (whatFighting != Monsters::BLANKMONSTER)
 		{
 			
 		}

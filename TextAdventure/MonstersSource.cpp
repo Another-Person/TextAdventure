@@ -2,6 +2,9 @@
 #include <iostream>
 #include "Monsters.h"
 
+/* Block of old encapsulation code for currentMob; replaced by class.
+ * Never even really used yet (never got to the point) so will probably be thown out soon.
+ * Kept in case class seems to not work despite being the exact same code, just in a class.
 static GenericMobTemplate currentMob;
 
 void SetcurrentMobValues(Monsters monster)
@@ -65,3 +68,4 @@ void ClearcurrentMobValues()
 	currentMob.health = 0;
 	currentMob.damage = 0;
 }
+*/
