@@ -50,11 +50,11 @@ void CheckCommand(std::string input)
 	}
 }
 
-void FightCommand(bool isFighting, Monsters whatFighting)
+void FightCommand(bool isFighting)
 {
 	if (isFighting == true)
 	{
-		if (whatFighting != Monsters::BLANKMONSTER)
+		if ( thePlayer.GetwhatFighting() != Monsters::BLANKMONSTER)
 		{
 			
 		}

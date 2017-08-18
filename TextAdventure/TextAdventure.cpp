@@ -159,7 +159,7 @@ void ParseCommands(std::string commandInput)
 		CheckCommand(GetCommandArgument());
 		break;
 	case Commands::FIGHT:
-		FightCommand(thePlayer.GetisFighting(), thePlayer.GetwhatFighting);
+		FightCommand(thePlayer.GetisFighting());
 		break;
 	case Commands::EXIT:
 		exit(0);

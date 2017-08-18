@@ -6,6 +6,6 @@ void CheckHealthCommand();
 
 void CheckCommand(std::string input);
 
-void FightCommand(bool isFighting, Monsters whatFighting);
+void FightCommand(bool isFighting);
 
 #endif PLAYERFUNCDEFINE_H 
