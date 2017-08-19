@@ -19,10 +19,11 @@ private:
 	bool isFighting;                        // Player doesn't start off fighting something
 	Monsters whatFighting;                  // Initialized with the BlankMonster placeholder; if isFighting is true but BlankMonster is here then something is wrong
 	std::vector<int> inventory;             // Makes dynamicially sized array player inv, primarily for future use
+	int damage;                             // Holds how much damage the player can do
 
 public:
 	// Constructor for priv variables
-	Player(int startHealth = 20, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }
+	Player(int startHealth = 20, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER, int startDamage = 10): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }, damage { startDamage }
 	{
 	}
 
@@ -36,7 +37,7 @@ public:
 		health = health + amount;
 	}
 
-	void SubtractFromPlayerHealth(int amount)  // Takes away a given amount of health from the player.
+	void SubtractFromPlayerHealth(int amount)  // Subtracts a given amount of health from the player.
 	{
 		health = health - amount;
 	}
@@ -112,6 +113,21 @@ public:
 	void SetwhatFighting(Monsters fighting)  // Sets the whatFighting variable to a given value.
 	{
 		whatFighting = fighting;
+	}
+
+	int Getdamage()  // Returns the value of damage.
+	{
+		return damage;
+	}
+
+	void AddTodamage(int amount)  // Adds the given amount to damage
+	{
+		damage = damage + amount;
+	}
+
+	void SubtractFromdamage(int amount) // Subtracts the given amount from damage
+	{
+		damage = damage - amount;
 	}
 };
 

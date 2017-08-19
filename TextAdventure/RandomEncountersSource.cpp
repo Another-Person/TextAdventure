@@ -9,12 +9,11 @@
 extern CurrentMob currentMob;
 extern Player thePlayer;
 
-void RandEncounterNature()
+void RandEncounterNature()  // Has random chance to display a message telling the player they have encountered some natural thing.
 {
 	int chance = RandInt(1, 3);
 	if (chance == 3) 
 	{
-		
 		int randomlySelectObject = RandInt(1, 4);
 		switch (randomlySelectObject)
 		{
@@ -37,7 +36,7 @@ void RandEncounterNature()
 	}
 }
 
-bool RandEncounterMonster()
+bool RandEncounterMonster()  // Randomly makes the player run into various monsters and sets appropriate values for other parts of the game.
 {
 	bool encounteredMonster = false;
 	int chance = RandInt(1, 4);

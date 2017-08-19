@@ -1,5 +1,8 @@
 #ifndef PLAYERINVITEMS_H
 #define PLAYERINVITEMS_H
+
+
+
 namespace InvItems
 {
 	enum InvItems

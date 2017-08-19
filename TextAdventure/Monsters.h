@@ -79,7 +79,7 @@ public:
 		health = health + amount;
 	}
 
-	void subtractFromCurrentMobHealth(int amount)  // Takes away a given amount of health from the mob.
+	void subtractFromCurrentMobHealth(int amount)  // Subtracts a given amount of health from the mob.
 	{
 		health = health - amount;
 	}
