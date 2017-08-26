@@ -5,7 +5,7 @@
 #include "Monsters.h"
 #include "PlayerInvItems.h"
 
-enum class PlayerCheckCommandArgs
+enum class PlayerCheckCommandArgs  // Enums for different arguments for the Check command
 {
 	HEALTH,
 	INV

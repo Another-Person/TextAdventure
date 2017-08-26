@@ -1,13 +1,15 @@
 #ifndef MONSTERS_H
 #define MONSTERS_H
 
-enum class Monsters
+enum class Monsters  // Enum for all the different types of monsters
 {
 	BLANKMONSTER,
 	ORC,
 	GIANTSPIDER,
 	TROLL
 };
+
+// Structs defining the characteristics of each monster
 
 struct Orc
 {

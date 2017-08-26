@@ -1,3 +1,7 @@
+/* Text Adventure by Joey Sachtleben
+ * Version 0.2.1
+ */
+
 #include "stdafx.h"
 #include <random>
 #include <iostream>
@@ -8,10 +12,10 @@
 #include "PlayerVars.h"
 #include "PlayerFuncDefine.h"
 
-CurrentMob currentMob;
-Player thePlayer;
+CurrentMob currentMob;   // Global instance of the currentMob class
+Player thePlayer;        // Global instance of the Player class
 
-enum class MoveCommandArgs
+enum class MoveCommandArgs  // Directions used by the Move command
 {
 	NORTH,
 	EAST,
@@ -19,7 +23,7 @@ enum class MoveCommandArgs
 	WEST
 };
 
-enum class Commands
+enum class Commands  // Class of all commands
 {
 	MOVE,
 	HELP,
@@ -28,46 +32,46 @@ enum class Commands
 	EXIT
 };
 
-void GenerateLand()
+void GenerateLand()  // Function to determine what type of eviroment the player is in
 {
 	int randomLandTypeSelection = RandInt(1,4);
-	switch (randomLandTypeSelection)
+	switch (randomLandTypeSelection)  // Use random integer from above to determine the eviroment
 	{
-	case 1:
+	case 1:  // Forest eviroment
 	{
 		std::cout << "You are in a forest.\n";
 		RandEncounterNature();
 		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
-	case 2:
+	case 2:  // Plains eviroment
 	{
 		std::cout << "You are in a plain.\n";
 		RandEncounterNature();
 		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
-	case 3:
+	case 3:  // Desert eviroment
 	{
 		std::cout << "You are in a desert.\n";
 		RandEncounterNature();
 		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
-	case 4:
+	case 4:  // Tundra eviroment
 	{
 		std::cout << "You are in a tundra. \n";
 		RandEncounterNature();
 		thePlayer.SetFighting(RandEncounterMonster());
 		break;
 	}
-	default:
+	default:  // Error and exit if the integer does not correspond to one of the cases
 		std::cout << "ERROR: Something went wrong. Debug info: TextAdventure.GenerateLand.randomLandTypeSelection.OUTOFRANGE" << std::endl;
 		exit(1);
 	}
 }
 
-std::string GetCommand()
+std::string GetCommand()  // Function to ask the player for a command and then return it
 {
 	std::cout << "Please enter a command: ";
 	std::string tempString;
@@ -75,14 +79,14 @@ std::string GetCommand()
 	return tempString;
 }
 
-std::string GetCommandArgument()
+std::string GetCommandArgument()  // Function to get any arguments for the command
 {
 	std::string tempString;
 	std::cin >> tempString;
 	return tempString;
 }
 
-MoveCommandArgs MoveArgsStringEnumConvert(std::string input)
+MoveCommandArgs MoveArgsStringEnumConvert(std::string input)  // Convert string arguments for the move command to the Enum types
 {
 	if (input == "north")
 		return MoveCommandArgs::NORTH;
@@ -98,7 +102,7 @@ MoveCommandArgs MoveArgsStringEnumConvert(std::string input)
 	}
 }
 
-Commands CommandsStringEnumConvert(std::string input)
+Commands CommandsStringEnumConvert(std::string input)  // Convert input strings into Enum types for the commands
 {
 	if (input == "check")
 		return Commands::CHECK;
@@ -116,7 +120,7 @@ Commands CommandsStringEnumConvert(std::string input)
 	}
 }
 
-void MoveCommand(std::string direction)
+void MoveCommand(std::string direction)  // Implements the Move command
 {
 	MoveCommandArgs argument = MoveArgsStringEnumConvert(direction);
 	switch (argument)
@@ -143,7 +147,7 @@ void MoveCommand(std::string direction)
 	}
 }
 
-void ParseCommands(std::string commandInput)
+void ParseCommands(std::string commandInput)  // Parses the inputted command by the player and executes the command
 {
 	Commands command = CommandsStringEnumConvert(commandInput);
 	switch (command)
