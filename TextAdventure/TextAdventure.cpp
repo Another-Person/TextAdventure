@@ -175,6 +175,19 @@ int main()
 	{
 		std::string command = GetCommand();
 		ParseCommands(command);
+
+		if (thePlayer.GetPlayerHealth() < 20)
+		{
+			thePlayer.AddToPlayerHealth(5);
+		}
+		else if (thePlayer.GetPlayerHealth() < 30)
+		{
+			if (RandInt(1, 2) == 2)
+			{
+				thePlayer.AddToPlayerHealth(5);
+			}
+		}
+
 	}
     return 0;
 }

@@ -14,7 +14,7 @@ enum class PlayerCheckCommandArgs
 class Player
 {
 private:
-	int health;                             // Default to 20 health for player
+	int health;                             // Holds health of the player
 	std::array<int, 10> invObjects = { };   // Player has 10 empty slots by default | What if we want to give him the ability to carry more later in the game? Perhaps make this a dynamically allocated array?
 	bool isFighting;                        // Player doesn't start off fighting something
 	Monsters whatFighting;                  // Initialized with the BlankMonster placeholder; if isFighting is true but BlankMonster is here then something is wrong
@@ -23,11 +23,11 @@ private:
 
 public:
 	// Constructor for priv variables
-	Player(int startHealth = 20, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER, int startDamage = 10): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }, damage { startDamage }
+	Player(int startHealth = 30, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER, int startDamage = 10): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }, damage { startDamage }
 	{
 	}
 
-	int GetPlayerHealth()  // Returns current amount of health player has
+	int GetPlayerHealth()  // Returns current amount of health player has.
 	{
 		return health;
 	}
@@ -129,6 +129,7 @@ public:
 	{
 		damage = damage - amount;
 	}
+
 };
 
 #endif PLAYERSVARSDEFINE_H

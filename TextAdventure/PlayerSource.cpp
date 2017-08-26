@@ -61,6 +61,11 @@ void FightCommand(bool isFighting)  // Implements the Fight command for fighting
 			{
 				thePlayer.SubtractFromPlayerHealth(currentMob.getCurrentMobDamage());
 				std::cout << "You sucessfully strike the monster, but he returns your strike with a hard hit. \n";
+				if (thePlayer.GetPlayerHealth() < 1)
+				{
+					std::cout << "The monster's blow knocks you out, and you do not awaken." << std::endl;
+					exit(0);
+				}
 			}
 			else if (1 <= currentMob.getCurrentMobHealth())
 			{
