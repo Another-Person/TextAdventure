@@ -148,6 +148,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PlayerInvItemsSource.cpp" />
     <ClCompile Include="PlayerSource.cpp" />
     <ClCompile Include="RandNumGensSource.cpp" />
     <ClCompile Include="RandomEncountersSource.cpp" />

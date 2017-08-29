@@ -18,13 +18,14 @@ private:
 	std::array<int, 10> invObjects = { };   // Player has 10 empty slots by default | What if we want to give him the ability to carry more later in the game? Perhaps make this a dynamically allocated array?
 	bool isFighting;                        // Player doesn't start off fighting something
 	Monsters whatFighting;                  // Initialized with the BlankMonster placeholder; if isFighting is true but BlankMonster is here then something is wrong
-	std::vector<int> inventory;             // Makes dynamicially sized array player inv, primarily for future use
+	std::vector<ItemList> inventory; // Makes dynamicially sized array player inv, primarily for future use
 	int damage;                             // Holds how much damage the player can do
 
 public:
 	// Constructor for priv variables
 	Player(int startHealth = 30, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER, int startDamage = 10): health { startHealth }, isFighting { fighting }, whatFighting { startFighting }, damage { startDamage }
 	{
+		inventory = { ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND };
 	}
 
 	int GetPlayerHealth()  // Returns current amount of health player has.

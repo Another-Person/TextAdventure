@@ -1,5 +1,6 @@
 /* Text Adventure by Joey Sachtleben
- * Version 0.2.1
+ * Release Version 0.2.1
+ * Progress Version 0.3.0
  */
 
 #include "stdafx.h"
