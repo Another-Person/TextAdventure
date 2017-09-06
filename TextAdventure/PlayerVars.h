@@ -137,6 +137,16 @@ public:
 		}
 	}
 
+	void PlayerDropItemFromInv()
+	{
+		int slot;
+		std::cout << "What item would you like to drop?\n";
+		std::cout << "Slot #: ";
+		std::cin >> slot;
+		std::cout << "\n";
+		std::cout;
+	}
+
 	void SetFighting(bool fightingState)  // Sets the isFighting variable to the given state.
 	{
 		isFighting = fightingState;
