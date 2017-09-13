@@ -113,7 +113,7 @@ public:
 	{
 		bool invIsFull;
 		for (int invSlot = 0; invSlot < inventory.size(); ++invSlot)  // Search through players inventory to determine if it's full
-			if (inventory.at(invSlot) == ItemList::GENERIC_HAND)  // GENERIC_HAND is used as the placeholder value
+			if (inventory.at(invSlot) == ItemList::GENERIC_HAND)  // GENERIC_HAND is used as the empty value
 			{
 				invIsFull = false;
 			}
@@ -137,14 +137,36 @@ public:
 		}
 	}
 
-	void PlayerDropItemFromInv()
+	void RemoveItemFromInv(int slot)  // Sets the given slot from whatever it is currently holding to ItemList::GENERIC_HAND (placeholder item), effectively removing the item 
+	{
+		inventory.at(slot) = ItemList::GENERIC_HAND;
+	}
+
+	void PlayerDropItemFromInv()  // Lets the player remove an item from their inventory
 	{
 		int slot;
-		std::cout << "What item would you like to drop?\n";
+		std::cout << "What item would you like to drop?\n"; // Asks the player what slot to remove the item from
 		std::cout << "Slot #: ";
 		std::cin >> slot;
 		std::cout << "\n";
-		std::cout;
+		std::cout << "Are you sure you want to drop this " << ItemsToStrings(inventory.at(slot)) << " from your inventory?/n"; // Confirms they would like to remove this item
+		std::string responce;
+		std::cout << "Y/N : ";
+		std::cin >> responce;
+		std::cout << "/n";
+		if (responce == "Y") // If yes removes the player's item
+		{
+			RemoveItemFromInv(slot);
+		}
+		else if (responce == "N") // If no, does nothing (returns player to normal command prompt)
+		{
+
+		}
+		else // If invalid responce (not Y or N), tells them this and asks again
+		{
+			std::cout << "Please respond with Y or N./n";
+			PlayerDropItemFromInv();
+		}
 	}
 
 	void SetFighting(bool fightingState)  // Sets the isFighting variable to the given state.
