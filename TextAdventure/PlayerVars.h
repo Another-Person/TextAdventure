@@ -15,10 +15,10 @@ class Player
 {
 private:
 	int health;                             // Holds health of the player
-	std::array<int, 10> invObjects = { };   // Player has 10 empty slots by default | What if we want to give him the ability to carry more later in the game? Perhaps make this a dynamically allocated array?
+	std::array<int, 10> invObjects = { };   // Player inventory | Currently being removed in favor of std::vector based solution
 	bool isFighting;                        // Player doesn't start off fighting something
 	Monsters whatFighting;                  // Initialized with the BlankMonster placeholder; if isFighting is true but BlankMonster is here then something is wrong
-	std::vector<ItemList> inventory;        // Makes dynamicially sized array player inv, primarily for future use
+	std::vector<ItemList> inventory;        // Player inventory object
 	int damage;                             // Holds how much damage the player can do
 
 public:
