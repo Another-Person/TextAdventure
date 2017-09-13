@@ -1,5 +1,6 @@
 #ifndef PLAYERINVITEMS_H
 #define PLAYERINVITEMS_H
+#include <string>
 
 enum class ItemList
 {
