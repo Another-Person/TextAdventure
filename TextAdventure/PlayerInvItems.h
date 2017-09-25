@@ -14,5 +14,7 @@ enum class ItemList
 
 std::string ItemsToStrings(ItemList item);
 
+int GetWeaponsDamage(ItemList item);
+
 
 #endif PLAYERINVITEMS_H

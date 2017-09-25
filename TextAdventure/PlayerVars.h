@@ -11,6 +11,13 @@ enum class PlayerCheckCommandArgs  // Enums for different arguments for the Chec
 	INV
 };
 
+enum class ItemEvents  // Labels for different events that can happen to an item
+{
+	USED,
+	PICKED_UP,
+	DROPPED
+};
+
 class Player
 {
 private:
@@ -65,6 +72,11 @@ public:
 			std::cout << "Slot " << invSlot + 1 << ": " << ItemsToStrings(inventory.at(invSlot)) << std::endl;
 	}
 
+	void UpdatePlayerStats(ItemList item, ItemEvents event) // Updates player stats (damage, health, etc) according to what item they just used or picked up
+	{
+		AddTodamage(GetWeaponsDamage(item));
+	}
+
 	void ReplaceItemInInv(ItemList item)  // Replaces an item currently in a player's inventory with a new one.
 	{
 		std::cout << "Do you want to replace another slot's contents with this " << ItemsToStrings(item) << "?\n";  // Asks the player if they want to replace something in their inventory with the new item
@@ -84,8 +96,10 @@ public:
 			std::cout << "\n";
 			if (responce2 == "Y")  // If they did, replace item
 			{
+				UpdatePlayerStats(inventory.at(slot), ItemEvents::DROPPED);
 				inventory.at(slot) = item;
 				std::cout << "You dropped the previous item to replace it with a " << ItemsToStrings(inventory.at(slot)) << ".\n";
+				UpdatePlayerStats(item, ItemEvents::PICKED_UP);
 			}
 			else if (responce2 == "N")  // If they didn't, go though the whole process again ( I didn't want to split this into yet another function at every question point)
 			{
@@ -128,6 +142,7 @@ public:
 				{
 					inventory.at(invSlot) = item;
 					std::cout << "You added the " << ItemsToStrings(item) << " to your inventory.\n";
+					UpdatePlayerStats(item, ItemEvents::PICKED_UP);
 				}
 		}
 		else  // If the player's inventory is full, then tell them this and run the ReplaceItemInInv funtion (see above)
@@ -139,6 +154,7 @@ public:
 
 	void RemoveItemFromInv(int slot)  // Sets the given slot from whatever it is currently holding to ItemList::GENERIC_HAND (placeholder item), effectively removing the item 
 	{
+		UpdatePlayerStats(inventory.at(slot), ItemEvents::DROPPED);
 		inventory.at(slot) = ItemList::GENERIC_HAND;
 	}
 
