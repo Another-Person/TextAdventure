@@ -22,7 +22,6 @@ class Player
 {
 private:
 	int health;                             // Holds health of the player
-	std::array<int, 10> invObjects = { };   // Player inventory | Currently being removed in favor of std::vector based solution
 	bool isFighting;                        // Player doesn't start off fighting something
 	Monsters whatFighting;                  // Initialized with the BlankMonster placeholder; if isFighting is true but BlankMonster is here then something is wrong
 	std::vector<ItemList> inventory;        // Player inventory object
@@ -48,22 +47,6 @@ public:
 	void SubtractFromPlayerHealth(int amount)  // Subtracts a given amount of health from the player.
 	{
 		health = health - amount;
-	}
-
-	std::string invObjIDToString(int objID)  // Converts the raw int objID's stored in the player inv into text strings.  | DEPRECIATED: This function is depreciated in favor of the ItemsToString function as part of a redo of the inventory system.
-	{
-		switch (objID)
-		{
-		case 0:
-			return "Nothing";
-			break;
-		case 1:
-			return "Sword";
-			break;
-		default:
-			std::cout << "ERROR: Something went wrong. Debug info: _class_Player.public.invObjIDToString.objID.INVALIDOBJID" << std::endl;
-			exit(1);
-		}
 	}
 
 	void PrintPlayerInvStrings()  // Prints out the player inventory as a list of text strings.
