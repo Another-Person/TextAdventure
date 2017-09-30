@@ -74,7 +74,18 @@ public:
 
 	void UpdatePlayerStats(ItemList item, ItemEvents event) // Updates player stats (damage, health, etc) according to what item they just used or picked up
 	{
-		AddTodamage(GetWeaponsDamage(item));
+		if (event == ItemEvents::PICKED_UP)
+		{
+			AddTodamage(GetWeaponsDamage(item));
+		}
+		else if (event == ItemEvents::DROPPED)
+		{
+			SubtractFromdamage(GetWeaponsDamage(item));
+		}
+		else if (event == ItemEvents::USED)
+		{
+
+		}
 	}
 
 	void ReplaceItemInInv(ItemList item)  // Replaces an item currently in a player's inventory with a new one.
@@ -156,6 +167,7 @@ public:
 	{
 		UpdatePlayerStats(inventory.at(slot), ItemEvents::DROPPED);
 		inventory.at(slot) = ItemList::GENERIC_HAND;
+		UpdatePlayerStats(inventory.at(slot), ItemEvents::PICKED_UP);
 	}
 
 	void PlayerDropItemFromInv()  // Lets the player remove an item from their inventory
