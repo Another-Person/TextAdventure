@@ -1,3 +1,8 @@
+/* RandNumGensSource.cpp
+ * Last updated with 0.2.2
+ * Holds functions that wrap the std random library code for easy use across the project 
+ */
+
 #include "stdafx.h"
 #include <random>
 #include <time.h>

@@ -1,7 +1,13 @@
+/* RandomEncountersSource.cpp
+ * Last updated with 0.2.2
+ * Holds functions that make the player randomly encounter details of nature and monsters to fight.
+ */
+
+
 #include "stdafx.h"
-#include <random>
+// #include <random> Is this necesarry here?
 #include <iostream>
-#include <time.h>
+// #include <time.h> Is this necesarry here?
 #include <string>
 #include "RandNumGens.h"
 #include "PlayerVars.h"
@@ -31,7 +37,7 @@ void RandEncounterNature()  // Has random chance to display a message telling th
 			break;
 		default:
 			std::cout << "ERROR: Something went wrong. Debug info: RandomEncountersSource.RandEncounterNature.randomlySelectObject.OUTOFRANGE" << std::endl;
-			exit(1);
+			exit(1);  // TODO: Find a better solution than exit()
 		}
 	}
 }
@@ -63,7 +69,7 @@ bool RandEncounterMonster()  // Randomly makes the player run into various monst
 			break;
 		default:
 			std::cout << "ERROR: Something went wrong. Debug info: RandomEncountersSource.RandEncounterMonster.randomlySelectMonster.OUTOFRANGE" << std::endl;
-			exit(1);
+			exit(1);  // TODO: Find a better solution than exit()
 		}
 	}
 	return encounteredMonster;

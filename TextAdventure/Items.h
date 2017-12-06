@@ -1,8 +1,14 @@
+/* InvItems.h
+ * Last updated with 0.2.2
+ * Header file for PlayerInvItemsSource.cpp
+ * Also contains the enum for all items
+ */
+
 #ifndef PLAYERINVITEMS_H
 #define PLAYERINVITEMS_H
 #include <string>
 
-enum class ItemList
+enum class ItemList  // Enum of all in game items
 {
 	/* Description of naming scheme:
 	 * GENERIC_ : Otherwise uncategorized items.
