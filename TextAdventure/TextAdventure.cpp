@@ -189,7 +189,7 @@ int main()
 {
 	while (true)  // I can't think of a simpler and/or better way to make this repeat itself, so it's always true
 	{
-		bool continueRunning; // Stores
+		bool continueRunning; // Stores whether to continue running or not
 		std::string command = GetCommand();
 		continueRunning = ParseCommands(command);
 
