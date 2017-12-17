@@ -39,7 +39,7 @@
     <ClInclude Include="Monsters.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerInvItems.h">
+    <ClInclude Include="Items.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,7 +59,7 @@
     <ClCompile Include="PlayerSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerInvItemsSource.cpp">
+    <ClCompile Include="ItemsSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

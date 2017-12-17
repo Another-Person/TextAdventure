@@ -1,6 +1,13 @@
 /* Text Adventure by Joey Sachtleben
- * Release Version 0.2.1
- * Progress Version 0.3.0
+ * Version 0.2.2
+ * 
+ * A small text adventure game. There is no real point, just go around exploring and fighting things. Still a major work in progress.
+ *
+ */
+
+/* TextAdventure.cpp
+ * Last edited with 0.2.2
+ * Holds the core of the game, including the core instances of the current mob (subject to change when the Map Update is finished) and the Player, the command parcer, several key functions and enum's, and the main run loop.
  */
 
 #include "stdafx.h"
@@ -24,7 +31,7 @@ enum class MoveCommandArgs  // Directions used by the Move command
 	WEST
 };
 
-enum class Commands  // Class of all commands
+enum class Commands  // Enum of all commands
 {
 	MOVE,
 	HELP,
@@ -33,7 +40,7 @@ enum class Commands  // Class of all commands
 	EXIT
 };
 
-void GenerateLand()  // Function to determine what type of eviroment the player is in
+void GenerateLand()  // Determine what type of eviroment the player has moved into
 {
 	int randomLandTypeSelection = RandInt(1,4);
 	switch (randomLandTypeSelection)  // Use random integer from above to determine the eviroment
@@ -72,7 +79,7 @@ void GenerateLand()  // Function to determine what type of eviroment the player 
 	}
 }
 
-std::string GetCommand()  // Function to ask the player for a command and then return it
+std::string GetCommand()  // Asks the player for a command and then returns it
 {
 	std::cout << "Please enter a command: ";
 	std::string tempString;
@@ -80,7 +87,7 @@ std::string GetCommand()  // Function to ask the player for a command and then r
 	return tempString;
 }
 
-std::string GetCommandArgument()  // Function to get any arguments for the command
+std::string GetCommandArgument()  // If the command entered has any arguments, get them from the console and returns them
 {
 	std::string tempString;
 	std::cin >> tempString;
@@ -148,8 +155,9 @@ void MoveCommand(std::string direction)  // Implements the Move command
 	}
 }
 
-void ParseCommands(std::string commandInput)  // Parses the inputted command by the player and executes the command
+bool ParseCommands(std::string commandInput)  // Parses the given command and begins execution of it
 {
+	bool keepRunning = true;
 	Commands command = CommandsStringEnumConvert(commandInput);
 	switch (command)
 	{
@@ -167,27 +175,40 @@ void ParseCommands(std::string commandInput)  // Parses the inputted command by 
 		FightCommand(thePlayer.GetisFighting());
 		break;
 	case Commands::EXIT:
-		exit(0);
+		keepRunning = 1;
+		break;
 	default:
 		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance.\n";
 		break;
 	}
+	
+	return keepRunning;
 }
 
 int main()
 {
-	while (true)
+	while (true)  // I can't think of a simpler and/or better way to make this repeat itself, so it's always true
 	{
+		bool continueRunning; // Stores
 		std::string command = GetCommand();
-		ParseCommands(command);
+		continueRunning = ParseCommands(command);
 
-		if (thePlayer.GetPlayerHealth() < 20)
+		if (continueRunning == true)
+		{
+			// do nothing; just continue running the loop
+		}
+		else if (continueRunning == false)
+		{
+			break;  // exits the infite loop
+		}
+
+		if (thePlayer.GetPlayerHealth() < 20)  // Player slowly heals over time
 		{
 			thePlayer.AddToPlayerHealth(5);
 		}
 		else if (thePlayer.GetPlayerHealth() < 30)
 		{
-			if (RandInt(1, 2) == 2)
+			if (RandInt(1, 2) == 2)  // Once the player has 20+ health, slow down their regeneration by adding in a little random chance
 			{
 				thePlayer.AddToPlayerHealth(5);
 			}

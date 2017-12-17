@@ -1,3 +1,8 @@
+/* PlayerSource.cpp
+ * Last updated with 0.2.2
+ * Holds code for the Check and Fight commands along with support code
+ */
+
 #include "stdafx.h"
 #include <iostream>
 #include <string>
@@ -64,7 +69,7 @@ void FightCommand(bool isFighting)  // Implements the Fight command for fighting
 				if (thePlayer.GetPlayerHealth() < 1)
 				{
 					std::cout << "The monster's blow knocks you out, and you do not awaken." << std::endl;
-					exit(0);
+					exit(0); // TODO: FInd a better solution than exit()
 				}
 			}
 			else if (1 <= currentMob.getCurrentMobHealth())
@@ -83,7 +88,7 @@ void FightCommand(bool isFighting)  // Implements the Fight command for fighting
 		else
 		{
 			std::cout << "ERROR: Something went wrong. Debug info: PlayerSource.FightCommand.INVALIDMONSTERBATTLE" << std::endl;
-			exit(1);
+			exit(1); // TODO: find a better solution than exit()
 		}
 	}
 	else

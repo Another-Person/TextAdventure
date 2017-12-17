@@ -1,3 +1,8 @@
+/* Monsters.h
+ * Last updated with 0.2.2
+ * Holds enum of all the monsters, along with structs for their default values and defines the CurrentMob class
+ */
+
 #ifndef MONSTERS_H
 #define MONSTERS_H
 
@@ -29,7 +34,7 @@ struct Troll
 	int damage = 10;
 };
 
-class CurrentMob
+class CurrentMob  // Contains information on the contained mob | TODO: make stuff const; make sure is fully extensible
 {
 private:
 	Monsters whichMonster;     // Which type of monster is being stored in the class
@@ -103,25 +108,4 @@ public:
 		damage = -1;
 	}
 };
-
-/* The functions have been depreciated in favor of a class.
- * These will most likely be thrown out shortly.
-struct GenericMobTemplate
-{
-	Monsters whichMonster;
-	int health;
-	int damage;
-};
-
-
-void SetcurrentMobValues(Monsters monster);
-
-void SubtractFromcurrentMobHealth(int amount);
-
-void AddTocurrentMobHealth(int amount);
-
-int GetcurrentMobHealth();
-
-int GetcurrentMobDamage();
-*/
 #endif MONSTERS_H

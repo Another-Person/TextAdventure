@@ -1,9 +1,14 @@
+/* PlayerVars.h
+ * Last updated with 0.2.2
+ * Header file containing the Player class and related code
+ */
+
 #ifndef PLAYERVARSDEFINE_H
 #define PLAYERVARSDEFINE_H
 #include <array>
 #include <vector>
 #include "Monsters.h"
-#include "PlayerInvItems.h"
+#include "Items.h"
 
 enum class PlayerCheckCommandArgs  // Enums for different arguments for the Check command
 {
@@ -13,12 +18,12 @@ enum class PlayerCheckCommandArgs  // Enums for different arguments for the Chec
 
 enum class ItemEvents  // Labels for different events that can happen to an item
 {
-	USED,
+	USED,  // Not actually used right now as no items are implemented that can be 'used'; just laying groundwork for future updates
 	PICKED_UP,
 	DROPPED
 };
 
-class Player
+class Player // The Player Class. Holds variables and access functions for them. Implements a lot of the function of the player. | TODO: make stuff const
 {
 private:
 	int health;                             // Holds health of the player
@@ -67,7 +72,8 @@ public:
 		}
 		else if (event == ItemEvents::USED)
 		{
-
+			// No items can actually be 'used' right now, so as such there is nothing here
+			// Just prep for future updates 
 		}
 	}
 
@@ -95,7 +101,7 @@ public:
 				std::cout << "You dropped the previous item to replace it with a " << ItemsToStrings(inventory.at(slot)) << ".\n";
 				UpdatePlayerStats(item, ItemEvents::PICKED_UP);
 			}
-			else if (responce2 == "N")  // If they didn't, go though the whole process again ( I didn't want to split this into yet another function at every question point)
+			else if (responce2 == "N")  // If they didn't, go though the whole process again (I didn't want to split this into yet another function at every question point)
 			{
 				ReplaceItemInInv(item);
 			}

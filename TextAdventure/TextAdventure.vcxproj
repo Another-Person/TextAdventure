@@ -140,7 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Monsters.h" />
     <ClInclude Include="PlayerFuncDefine.h" />
-    <ClInclude Include="PlayerInvItems.h" />
+    <ClInclude Include="Items.h" />
     <ClInclude Include="PlayerVars.h" />
     <ClInclude Include="RandNumGens.h" />
     <ClInclude Include="RandomEncounters.h" />
@@ -148,7 +148,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PlayerInvItemsSource.cpp" />
+    <ClCompile Include="ItemsSource.cpp" />
     <ClCompile Include="PlayerSource.cpp" />
     <ClCompile Include="RandNumGensSource.cpp" />
     <ClCompile Include="RandomEncountersSource.cpp" />
