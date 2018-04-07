@@ -7,7 +7,7 @@
 
 /* TextAdventure.cpp
  * Last edited with 0.2.2
- * Holds the core of the game, including the core instances of the current mob (subject to change when the Map Update is finished) and the Player, the command parcer, several key functions and enum's, and the main run loop.
+ * Holds the core of the game, including the core instances of the current mob (subject to change when the Map Update is finished) and the Player, the command parser, several key functions and enum's, and the main run loop.
  */
 
 #include "stdafx.h"
@@ -175,7 +175,7 @@ bool ParseCommands(std::string commandInput)  // Parses the given command and be
 		FightCommand(thePlayer.GetisFighting());
 		break;
 	case Commands::EXIT:
-		keepRunning = 1;
+		keepRunning = false;
 		break;
 	default:
 		std::cout << "Sorry, invalid command. Try typing \"Help\" if you need some assistance.\n";

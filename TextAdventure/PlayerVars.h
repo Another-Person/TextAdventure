@@ -7,6 +7,7 @@
 #define PLAYERVARSDEFINE_H
 #include <array>
 #include <vector>
+#include <iostream>
 #include "Monsters.h"
 #include "Items.h"
 
