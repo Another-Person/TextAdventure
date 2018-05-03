@@ -56,10 +56,10 @@
     <ClCompile Include="RandomEncountersSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerSource.cpp">
+    <ClCompile Include="ItemsSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItemsSource.cpp">
+    <ClCompile Include="OriginalPlayerSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

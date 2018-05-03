@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ItemsSource.cpp" />
-    <ClCompile Include="PlayerSource.cpp" />
+    <ClCompile Include="OriginalPlayerSource.cpp" />
     <ClCompile Include="RandNumGensSource.cpp" />
     <ClCompile Include="RandomEncountersSource.cpp" />
     <ClCompile Include="stdafx.cpp">
