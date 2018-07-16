@@ -17,12 +17,12 @@ enum class PlayerCheckCommandArgs  // Enums for different arguments for the Chec
 	INV
 };
 
-enum class ItemEvents  // Labels for different events that can happen to an item
-{
-	USED,  // Not actually used right now as no items are implemented that can be 'used'; just laying groundwork for future updates
-	PICKED_UP,
-	DROPPED
-};
+//enum class ItemEvents  // Labels for different events that can happen to an item
+//{
+//	USED,  // Not actually used right now as no items are implemented that can be 'used'; just laying groundwork for future updates
+//	PICKED_UP,
+//	DROPPED
+//};
 
 class Player // The Player Class. Holds variables and access functions for them. Implements a lot of the function of the player. | TODO: make stuff const
 {

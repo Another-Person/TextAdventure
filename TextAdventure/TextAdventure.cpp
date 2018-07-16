@@ -1,5 +1,5 @@
 /* Text Adventure by Joey Sachtleben
- * Version 0.2.2
+ * Version 0.2.3
  * 
  * A small text adventure game. There is no real point, just go around exploring and fighting things. Still a major work in progress.
  *
