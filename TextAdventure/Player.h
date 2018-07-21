@@ -27,10 +27,41 @@ private:
 	std::vector<ItemList> inventory;   // Player inventory object
 
 public:
+	Player(double startHealth = 30, double startDamage = 10, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER);
 
+	double GetPlayerHealth() { return health; }
+	void AddToPlayerHealth(double amount);
+	void SubtractFromPlayerHealth(double amount);
 
+	double GetDamage() { return damage; }
+	void AddToPlayerDamage(double amount);
+	void SubtractFromPlayerDamage(double amount);
+
+	bool GetIsFighting() { return isFighting; }
+	void SetIsFighting(bool fightingState);
+
+	Monsters GetWhatIsFighting() { return whatIsFighting; }
+	void SetWhatIsFighting(Monsters fighting);
+
+	void UpdatePlayerStats(ItemList item, ItemEvents event);
+	
+	void PrintPlayerInvStrings();
+
+	void ReplaceItemInInv(ItemList item);
+
+	void AddItemToInv(ItemList item);
+
+	void RemoveItemFromInv(int slot);
+
+	void PlayerDropItemFromInv();
 
 };
+
+void CheckHealthCommand();
+
+void CheckCommand(std::string input);
+
+void FightCommand(bool isFighting);
 
 
 #endif PLAYER_H // !PLAYER_H

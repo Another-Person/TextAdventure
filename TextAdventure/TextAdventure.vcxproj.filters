@@ -24,25 +24,19 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RandNumGens.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomEncounters.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerFuncDefine.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerVars.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Monsters.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Items.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Monsters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RandNumGens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomEncounters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,9 +54,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ItemsSource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OriginalPlayerSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayerSource.cpp">

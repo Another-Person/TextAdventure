@@ -6,7 +6,7 @@
  */
 
 /* TextAdventure.cpp
- * Last edited with 0.2.2
+ * Last edited with 0.2.3
  * Holds the core of the game, including the core instances of the current mob (subject to change when the Map Update is finished) and the Player, the command parser, several key functions and enum's, and the main run loop.
  */
 
@@ -17,8 +17,7 @@
 #include <string>
 #include "RandNumGens.h"
 #include "RandomEncounters.h"
-#include "PlayerVars.h"
-#include "PlayerFuncDefine.h"
+#include "Player.h"
 
 CurrentMob currentMob;   // Global instance of the currentMob class
 Player thePlayer;        // Global instance of the Player class
@@ -49,28 +48,28 @@ void GenerateLand()  // Determine what type of eviroment the player has moved in
 	{
 		std::cout << "You are in a forest.\n";
 		RandEncounterNature();
-		thePlayer.SetFighting(RandEncounterMonster());
+		thePlayer.SetIsFighting(RandEncounterMonster());
 		break;
 	}
 	case 2:  // Plains eviroment
 	{
 		std::cout << "You are in a plain.\n";
 		RandEncounterNature();
-		thePlayer.SetFighting(RandEncounterMonster());
+		thePlayer.SetIsFighting(RandEncounterMonster());
 		break;
 	}
 	case 3:  // Desert eviroment
 	{
 		std::cout << "You are in a desert.\n";
 		RandEncounterNature();
-		thePlayer.SetFighting(RandEncounterMonster());
+		thePlayer.SetIsFighting(RandEncounterMonster());
 		break;
 	}
 	case 4:  // Tundra eviroment
 	{
 		std::cout << "You are in a tundra. \n";
 		RandEncounterNature();
-		thePlayer.SetFighting(RandEncounterMonster());
+		thePlayer.SetIsFighting(RandEncounterMonster());
 		break;
 	}
 	default:  // Error and exit if the integer does not correspond to one of the cases
@@ -172,7 +171,7 @@ bool ParseCommands(std::string commandInput)  // Parses the given command and be
 		CheckCommand(GetCommandArgument());
 		break;
 	case Commands::FIGHT:
-		FightCommand(thePlayer.GetisFighting());
+		FightCommand(thePlayer.GetIsFighting());
 		break;
 	case Commands::EXIT:
 		keepRunning = false;
