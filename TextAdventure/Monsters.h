@@ -1,6 +1,6 @@
 /* Monsters.h
- * Last updated with 0.2.2
- * Holds enum of all the monsters, along with structs for their default values and defines the CurrentMob class
+ * Last updated with 0.2.3
+ * Holds enum of all the monsters, along with structs for their default values and defines the CurrentMob class. Header file for Monsters.cpp
  */
 
 #ifndef MONSTERS_H
@@ -42,70 +42,21 @@ private:
 	int damage;                // How much damage the current monster can deal
 public:
 	// Constructor for priv variables
-	CurrentMob(Monsters startMonster = Monsters::BLANKMONSTER, int startHealth = -1, int startDamage = -1) : whichMonster{ startMonster }, health{ startHealth }, damage{ startDamage }
-	{
-	}
+	CurrentMob(Monsters startMonster = Monsters::BLANKMONSTER, int startHealth = -1, int startDamage = -1);
 
-	void setCurrentMobValues(Monsters monster)  // Sets the private varibles with the appropriate values for the mob passed into the function. | TODO: Make it less dependent on the if / else-if block, as hard to extend in the future
-	{
-		if (monster == Monsters::ORC)
-		{
-			Orc orc;
-			whichMonster = monster;
-			health = orc.health;
-			damage = orc.damage;
-		}
-		else if (monster == Monsters::GIANTSPIDER)
-		{
-			GiantSpider giantspider;
-			whichMonster = monster;
-			health = giantspider.health;
-			damage = giantspider.damage;
-		}
-		else if (monster == Monsters::TROLL)
-		{
-			Troll troll;
-			whichMonster = monster;
-			health = troll.health;
-			damage = troll.damage;
-		}
-		else
-		{
-			std::cout << "ERROR: Something went wrong. Debug info: _class_CurrentMob.SetCurrentMobValues.INVALIDMONSTERPASSED" << std::endl;
-			exit(1);
-		}
-	}
+	void setCurrentMobValues(Monsters monster);  // Sets the private varibles with the appropriate values for the mob passed into the function. | TODO: Make it less dependent on the if / else-if block, as hard to extend in the future
 
-	int getCurrentMobHealth()  // Returns the current health of the mob.
-	{
-		return health;
-	}
+	int getCurrentMobHealth() { return health; } // Returns the current health of the mob.
 
-	void addToCurrentMobHealth(int amount) // Adds a given amount of heath to the mob.
-	{
-		health = health + amount;
-	}
+	void addToCurrentMobHealth(int amount) { health = health + amount; } // Adds a given amount of heath to the mob.
 
-	void subtractFromCurrentMobHealth(int amount)  // Subtracts a given amount of health from the mob.
-	{
-		health = health - amount;
-	}
+	void subtractFromCurrentMobHealth(int amount) { health = health - amount; } // Subtracts a given amount of health from the mob.
 
-	int getCurrentMobDamage()  // Returns how much damage the mob can do. | TODO: Probably add functions to change this for myriad reasons
-	{
-		return damage;
-	}
+	int getCurrentMobDamage() { return damage; } // Returns how much damage the mob can do. | TODO: Probably add functions to change this for myriad reasons
 
-	Monsters getCurrentMobwhichMonster() // Returns which monster is currently stored in the Class.
-	{
-		return whichMonster;
-	}
+	Monsters getCurrentMobwhichMonster() { return whichMonster; } // Returns which monster is currently stored in the Class.
 
-	void clearCurrentMobValues()  // Resets CurrentMob to default, generic values.
-	{
-		whichMonster = Monsters::BLANKMONSTER;
-		health = -1;
-		damage = -1;
-	}
+	void clearCurrentMobValues();  // Resets CurrentMob to default, generic values.
 };
+
 #endif MONSTERS_H

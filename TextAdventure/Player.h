@@ -1,6 +1,6 @@
 /* Player.h
  * Last updated with 0.2.3
- * Provides the Player class interface and other code for the player; header file for PlayerSource.cpp
+ * Provides the Player class interface and other code for the player; header file for Player.cpp
  */
 
 #ifndef PLAYER_H

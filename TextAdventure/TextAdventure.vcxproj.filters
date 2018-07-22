@@ -47,16 +47,19 @@
     <ClCompile Include="TextAdventure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandNumGensSource.cpp">
+    <ClCompile Include="Monsters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandomEncountersSource.cpp">
+    <ClCompile Include="Items.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItemsSource.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerSource.cpp">
+    <ClCompile Include="RandNumGens.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomEncounters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
