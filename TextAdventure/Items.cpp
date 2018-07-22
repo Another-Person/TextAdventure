@@ -19,7 +19,7 @@ std::string ItemsToStrings(ItemList item)  // Converts the internal Item ID's in
 		return "Sword";
 		break;
 	default:
-		std::cout << "ERROR: Something went wrong. Error info: PlayerInvItems.ItemsToStrings.INVALID_ITEM_PASSED" << std::endl;
+		std::cout << "ERROR: Something went wrong. Error info: Items.ItemsToStrings.INVALID_ITEM_PASSED" << std::endl;
 		exit(1);  // TODO: Find a better solution than exit()
 	}
 }

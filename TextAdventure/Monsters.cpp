@@ -11,7 +11,7 @@ CurrentMob::CurrentMob(Monsters startMonster, int startHealth, int startDamage) 
 {
 }
 
-void CurrentMob::setCurrentMobValues(Monsters monster)
+void CurrentMob::setCurrentMobValues(Monsters monster) // Uses a bunch of if-else-if blocks comparing the name of the passed in monster to the pre-defined structs for each monster
 {
 	if (monster == Monsters::ORC)
 	{

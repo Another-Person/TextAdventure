@@ -236,7 +236,7 @@ void FightCommand(bool isFighting)  // Implements the Fight command for fighting
 		}
 		else
 		{
-			std::cout << "ERROR: Something went wrong. Debug info: PlayerSource.FightCommand.INVALIDMONSTERBATTLE" << std::endl;
+			std::cout << "ERROR: Something went wrong. Debug info: Player.FightCommand.INVALIDMONSTERBATTLE" << std::endl;
 			exit(1); // TODO: find a better solution than exit()
 		}
 	}

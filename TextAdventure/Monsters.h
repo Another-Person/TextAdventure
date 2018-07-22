@@ -45,18 +45,17 @@ public:
 	CurrentMob(Monsters startMonster = Monsters::BLANKMONSTER, int startHealth = -1, int startDamage = -1);
 
 	void setCurrentMobValues(Monsters monster);  // Sets the private varibles with the appropriate values for the mob passed into the function. | TODO: Make it less dependent on the if / else-if block, as hard to extend in the future
-
-	int getCurrentMobHealth() { return health; } // Returns the current health of the mob.
-
-	void addToCurrentMobHealth(int amount) { health = health + amount; } // Adds a given amount of heath to the mob.
-
-	void subtractFromCurrentMobHealth(int amount) { health = health - amount; } // Subtracts a given amount of health from the mob.
-
-	int getCurrentMobDamage() { return damage; } // Returns how much damage the mob can do. | TODO: Probably add functions to change this for myriad reasons
-
-	Monsters getCurrentMobwhichMonster() { return whichMonster; } // Returns which monster is currently stored in the Class.
-
 	void clearCurrentMobValues();  // Resets CurrentMob to default, generic values.
+	
+	int getCurrentMobHealth() { return health; } 
+	void addToCurrentMobHealth(int amount) { health = health + amount; } 
+	void subtractFromCurrentMobHealth(int amount) { health = health - amount; } 
+
+	int getCurrentMobDamage() { return damage; } // TODO: Probably add functions to change this for myriad reasons
+
+	Monsters getCurrentMobwhichMonster() { return whichMonster; } 
+
+	
 };
 
 #endif MONSTERS_H
