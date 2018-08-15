@@ -138,6 +138,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Monsters.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Items.h" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Items.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Monsters.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RandNumGens.cpp" />
