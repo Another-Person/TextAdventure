@@ -10,7 +10,7 @@
 #include "Items.h"
 #include "Monsters.h"
 
-Player::Player(double startHealth, double startDamage, bool fighting, Monsters startFighting) : health{ startHealth }, damage{ startDamage }, isFighting{ fighting }, whatIsFighting{ startFighting }
+Player::Player(int startXCoord, int startYCoord, double startHealth, double startDamage, bool fighting, Monsters startFighting) : mapXCoord{ startXCoord }, mapYCoord{ startYCoord }, health{ startHealth }, damage{ startDamage }, isFighting{ fighting }, whatIsFighting{ startFighting }
 {
 	inventory = { ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND, ItemList::GENERIC_HAND };
 }

@@ -20,6 +20,8 @@ enum class PlayerCheckCommandArgs // Type for different arguments of the Check c
 class Player // The Player class. Holds the player variables and related functions. 
 {
 private:
+	int mapXCoord;                     // Holds the player's x-coordinate on the map
+	int mapYCoord;                     // Holds the player's y-coordinate on the map
 	double health;                     // Holds health of the player
 	double damage;	                   // Holds how much damage the player can do
 	bool isFighting;                   // Player doesn't start off fighting something
@@ -27,7 +29,7 @@ private:
 	std::vector<ItemList> inventory;   // Player inventory object
 
 public:
-	Player(double startHealth = 30, double startDamage = 10, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER);
+	Player(int startXCoord = 5, int startYCoord = 5, double startHealth = 30, double startDamage = 10, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER);
 
 	double GetPlayerHealth() { return health; }
 	void AddToPlayerHealth(double amount);
