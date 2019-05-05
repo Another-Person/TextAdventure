@@ -98,7 +98,7 @@ void Player::ReplaceItemInInv(ItemList item)
 
 void Player::AddItemToInv(ItemList item)
 {
-	bool invIsFull;
+	bool invIsFull = false;
 	for (int invSlot = 0; invSlot < inventory.size(); ++invSlot)  // Search through players inventory to determine if it's full
 		if (inventory.at(invSlot) == ItemList::GENERIC_HAND)  // GENERIC_HAND is used as the empty value
 		{

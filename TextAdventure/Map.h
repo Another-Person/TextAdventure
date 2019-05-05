@@ -7,7 +7,7 @@
 #define MAP_H
 #include "Monsters.h"
 #include "Items.h"
-#include <vector>
+#include <array>
 
 enum class Terrain
 {
@@ -19,7 +19,8 @@ enum class Terrain
 
 struct MapTile
 {
-	bool playerInTile;
+	int xCoord;
+	int yCoord;
 	Monsters monsterInTile;
 	ItemList itemInTile;
 	Terrain tileTerrain;
@@ -28,7 +29,7 @@ struct MapTile
 class Map
 {
 private:
-	std::vector<std::vector<MapTile>> theMap;
+	std::array<std::array<MapTile,10>,10> theMap;
 
 public:
 	Map();
