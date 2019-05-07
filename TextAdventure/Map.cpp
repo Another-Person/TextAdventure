@@ -24,7 +24,7 @@ Map::Map()
 				setTerrain = Terrain::PLAIN;
 			else if (num == 4)
 				setTerrain = Terrain::TUNDRA;
-			theMap.at(x).at(y) = { x, y, Monsters::BLANKMONSTER, ItemList::GENERIC_HAND, setTerrain };
+			theMap.at(x).at(y) = { {x,y}, Monsters::BLANKMONSTER, ItemList::GENERIC_HAND, setTerrain };
 		}
 
 	}

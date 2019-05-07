@@ -10,6 +10,7 @@
 #include <iostream>
 #include "Monsters.h"
 #include "Items.h"
+#include "Map.h"
 
 enum class PlayerCheckCommandArgs // Type for different arguments of the Check command
 {
@@ -20,8 +21,7 @@ enum class PlayerCheckCommandArgs // Type for different arguments of the Check c
 class Player // The Player class. Holds the player variables and related functions. 
 {
 private:
-	int mapXCoord;                     // Holds the player's x-coordinate on the map
-	int mapYCoord;                     // Holds the player's y-coordinate on the map
+	CoordPoint position;			   // Position of the player on the map
 	double health;                     // Holds health of the player
 	double damage;	                   // Holds how much damage the player can do
 	bool isFighting;                   // Player doesn't start off fighting something
@@ -29,7 +29,7 @@ private:
 	std::vector<ItemList> inventory;   // Player inventory object
 
 public:
-	Player(int startXCoord = 5, int startYCoord = 5, double startHealth = 30, double startDamage = 10, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER);
+	Player(CoordPoint startPosition = { 5,5 }, double startHealth = 30, double startDamage = 10, bool fighting = false, Monsters startFighting = Monsters::BLANKMONSTER);
 
 	double GetPlayerHealth() { return health; }
 	void AddToPlayerHealth(double amount);

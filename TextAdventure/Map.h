@@ -17,10 +17,15 @@ enum class Terrain
 	DESERT
 };
 
-struct MapTile
+struct CoordPoint
 {
 	int xCoord;
 	int yCoord;
+};
+
+struct MapTile
+{
+	CoordPoint coordinates;
 	Monsters monsterInTile;
 	ItemList itemInTile;
 	Terrain tileTerrain;
