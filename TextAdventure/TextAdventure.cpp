@@ -6,7 +6,7 @@
  */
 
 /* TextAdventure.cpp
- * Last edited with 0.2.3
+ * Last edited with 0.3.0_dr8
  * Holds the core of the game, including the core instances of the current mob (subject to change when the Map Update is finished) and the Player, the command parser, several key functions and enum's, and the main run loop.
  */
 

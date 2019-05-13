@@ -1,5 +1,5 @@
 /* PlayerSource.cpp
- * Last updated with 0.2.3
+ * Last updated with 0.3.0_dr8
  * Provides the Player class functionality and other code for the player.
  */
 
@@ -301,8 +301,4 @@ MoveCommandArgs MoveArgsStringEnumConvert(std::string input)  // Convert string 
 		return MoveCommandArgs::WEST;
 	else if (input == "south")
 		return MoveCommandArgs::SOUTH;
-	else
-	{
-		// No return here; blank return leads to default path for invalid input handling
-	}
 }
