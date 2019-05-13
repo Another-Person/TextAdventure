@@ -23,6 +23,9 @@ struct CoordPoint
 	int yCoord;
 };
 
+bool operator== (const CoordPoint& p1, const CoordPoint& p2);
+bool operator!= (const CoordPoint& p1, const CoordPoint& p2);
+
 struct MapTile
 {
 	CoordPoint coordinates;
@@ -38,6 +41,10 @@ private:
 
 public:
 	Map();
+
+	Terrain GetTileTerrain(CoordPoint point);
 };
+
+std::string TerrainToString(Terrain terrain);
 
 #endif // !MAP_H

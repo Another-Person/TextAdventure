@@ -29,3 +29,49 @@ Map::Map()
 
 	}
 }
+
+Terrain Map::GetTileTerrain(CoordPoint point)
+{
+	Terrain returnValue = Terrain::DESERT;
+	for (int x = 0; x < theMap.size(); x++)
+	{
+		for (int y = 0; y < theMap.at(x).size(); y++)
+		{
+			if (theMap.at(x).at(y).coordinates == point)
+			{
+				returnValue = theMap.at(x).at(y).tileTerrain;
+			}
+		}
+	}
+	return returnValue;
+}
+
+bool operator==(const CoordPoint& p1, const CoordPoint& p2)
+{
+	return ( p1.xCoord == p2.xCoord && p1.yCoord == p2.yCoord );
+}
+
+bool operator!=(const CoordPoint& p1, const CoordPoint& p2)
+{
+	return !(p1 == p2);
+}
+
+std::string TerrainToString(Terrain terrain)
+{
+	if (terrain == Terrain::DESERT)
+	{
+		return "desert";
+	}
+	else if (terrain == Terrain::FOREST)
+	{
+		return "forest";
+	}
+	else if (terrain == Terrain::PLAIN)
+	{
+		return "plain";
+	}
+	else if (terrain == Terrain::TUNDRA)
+	{
+		return "tundra";
+	}
+}

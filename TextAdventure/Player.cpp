@@ -10,6 +10,7 @@
 #include "Items.h"
 #include "Monsters.h"
 #include "Map.h"
+#include "RandomEncounters.h"
 
 Player::Player(CoordPoint startPosition, double startHealth, double startDamage, bool fighting, Monsters startFighting) : position{ startPosition }, health{ startHealth }, damage{ startDamage }, isFighting{ fighting }, whatIsFighting{ startFighting }
 {
@@ -160,6 +161,49 @@ void Player::PlayerDropItemFromInv()
 	}
 }
 
+extern Map theMap;
+
+void Player::MoveCommand(std::string direction)
+{
+	MoveCommandArgs argument = MoveArgsStringEnumConvert(direction);
+	std::string tempTerrain = "failure";
+	switch (argument)
+	{
+	case MoveCommandArgs::NORTH:
+		position.xCoord = position.xCoord + 1;
+		std::cout << "You moved north.\n";
+		tempTerrain = TerrainToString(theMap.GetTileTerrain(position));
+		std::cout << "You are in a " << tempTerrain << ".\n";
+		RandEncounterNature();
+		SetIsFighting(RandEncounterMonster());
+		break;
+	case MoveCommandArgs::EAST:
+		position.yCoord = position.yCoord + 1;
+		std::cout << "You moved east.\n";
+		tempTerrain = TerrainToString(theMap.GetTileTerrain(position));
+		std::cout << "You are in a " << tempTerrain << ".\n";
+		SetIsFighting(RandEncounterMonster());
+		break;
+	case MoveCommandArgs::SOUTH:
+		position.xCoord = position.xCoord - 1;
+		std::cout << "You moved south.\n";
+		tempTerrain = TerrainToString(theMap.GetTileTerrain(position));
+		std::cout << "You are in a " << tempTerrain << ".\n";
+		SetIsFighting(RandEncounterMonster());
+		break;
+	case MoveCommandArgs::WEST:
+		position.yCoord = position.yCoord - 1;
+		std::cout << "You moved west. \n";
+		tempTerrain = TerrainToString(theMap.GetTileTerrain(position));
+		std::cout << "You are in a " << tempTerrain << ".\n";
+		SetIsFighting(RandEncounterMonster());
+		break;
+	default:
+		std::cout << "Sorry, invalid direction. Please use compass directions (north, east, south, west).\n";
+		break;
+	}
+}
+
 extern CurrentMob currentMob;
 extern Player thePlayer;
 
@@ -244,5 +288,21 @@ void FightCommand(bool isFighting)  // Implements the Fight command for fighting
 	else
 	{
 		std::cout << "You prepare yourself to battle, only to realize that you have nothing to fight.\n";
+	}
+}
+
+MoveCommandArgs MoveArgsStringEnumConvert(std::string input)  // Convert string arguments for the move command to the Enum types
+{
+	if (input == "north")
+		return MoveCommandArgs::NORTH;
+	else if (input == "east")
+		return MoveCommandArgs::EAST;
+	else if (input == "west")
+		return MoveCommandArgs::WEST;
+	else if (input == "south")
+		return MoveCommandArgs::SOUTH;
+	else
+	{
+		// No return here; blank return leads to default path for invalid input handling
 	}
 }

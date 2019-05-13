@@ -18,17 +18,11 @@
 #include "RandNumGens.h"
 #include "RandomEncounters.h"
 #include "Player.h"
+#include "Map.h"
 
 CurrentMob currentMob;   // Global instance of the currentMob class
 Player thePlayer;        // Global instance of the Player class
-
-enum class MoveCommandArgs  // Directions used by the Move command
-{
-	NORTH,
-	EAST,
-	SOUTH,
-	WEST
-};
+Map theMap;              // Global instance of the Map
 
 enum class Commands  // Enum of all commands
 {
@@ -39,7 +33,7 @@ enum class Commands  // Enum of all commands
 	EXIT
 };
 
-void GenerateLand()  // Determine what type of eviroment the player has moved into
+/* void GenerateLand()  // Determine what type of eviroment the player has moved into
 {
 	int randomLandTypeSelection = RandInt(1,4);
 	switch (randomLandTypeSelection)  // Use random integer from above to determine the eviroment
@@ -76,7 +70,7 @@ void GenerateLand()  // Determine what type of eviroment the player has moved in
 		std::cout << "ERROR: Something went wrong. Debug info: TextAdventure.GenerateLand.randomLandTypeSelection.OUTOFRANGE" << std::endl;
 		exit(1);
 	}
-}
+} */
 
 std::string GetCommand()  // Asks the player for a command and then returns it
 {
@@ -91,22 +85,6 @@ std::string GetCommandArgument()  // If the command entered has any arguments, g
 	std::string tempString;
 	std::cin >> tempString;
 	return tempString;
-}
-
-MoveCommandArgs MoveArgsStringEnumConvert(std::string input)  // Convert string arguments for the move command to the Enum types
-{
-	if (input == "north")
-		return MoveCommandArgs::NORTH;
-	else if (input == "east")
-		return MoveCommandArgs::EAST;
-	else if (input == "west")
-		return MoveCommandArgs::WEST;
-	else if (input == "south")
-		return MoveCommandArgs::SOUTH;
-	else
-	{
-		// No return here; blank return leads to default path for invalid input handling
-	}
 }
 
 Commands CommandsStringEnumConvert(std::string input)  // Convert input strings into Enum types for the commands
@@ -127,7 +105,7 @@ Commands CommandsStringEnumConvert(std::string input)  // Convert input strings 
 	}
 }
 
-void MoveCommand(std::string direction)  // Implements the Move command
+/* void MoveCommand(std::string direction)  // Implements the Move command
 {
 	MoveCommandArgs argument = MoveArgsStringEnumConvert(direction);
 	switch (argument)
@@ -152,7 +130,7 @@ void MoveCommand(std::string direction)  // Implements the Move command
 		std::cout << "Sorry, invalid direction. Please use compass directions (north, east, south, west).\n";
 		break;
 	}
-}
+} */
 
 bool ParseCommands(std::string commandInput)  // Parses the given command and begins execution of it
 {
@@ -161,7 +139,7 @@ bool ParseCommands(std::string commandInput)  // Parses the given command and be
 	switch (command)
 	{
 	case Commands::MOVE:
-		MoveCommand(GetCommandArgument());
+		thePlayer.MoveCommand(GetCommandArgument());
 		break;
 	case Commands::HELP:
 		std::cout << "Enter a command in the format <command> <argument>.\n";

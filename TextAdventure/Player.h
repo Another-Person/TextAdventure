@@ -18,6 +18,14 @@ enum class PlayerCheckCommandArgs // Type for different arguments of the Check c
 	INV
 };
 
+enum class MoveCommandArgs  // Directions used by the Move command
+{
+	NORTH,
+	EAST,
+	SOUTH,
+	WEST
+};
+
 class Player // The Player class. Holds the player variables and related functions. 
 {
 private:
@@ -57,6 +65,8 @@ public:
 
 	void PlayerDropItemFromInv();
 
+	CoordPoint GetPosition() { return position; }
+	void MoveCommand(std::string direction);
 };
 
 void CheckHealthCommand();
@@ -64,6 +74,8 @@ void CheckHealthCommand();
 void CheckCommand(std::string input);
 
 void FightCommand(bool isFighting);
+
+MoveCommandArgs MoveArgsStringEnumConvert(std::string input);
 
 
 #endif PLAYER_H // !PLAYER_H
