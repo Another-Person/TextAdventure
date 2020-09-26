@@ -30,6 +30,13 @@ Map::Map()
 	}
 }
 
+/*  Advice from Jordan Ball on how to 
+{
+	MapTile placeholder = { the stuff }
+	vector<MapTile> v1 { the maptiles, another, etc };
+	map.pushback(v1);
+}
+*/
 Terrain Map::GetTileTerrain(CoordPoint point)
 {
 	Terrain returnValue = Terrain::DESERT;

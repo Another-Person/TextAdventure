@@ -8,6 +8,9 @@
 #include "Monsters.h"
 #include "Items.h"
 #include <array>
+#include <vector>
+
+using namespace std;
 
 enum class Terrain
 {
@@ -37,7 +40,7 @@ struct MapTile
 class Map
 {
 private:
-	std::array<std::array<MapTile,10>,10> theMap;
+	vector<vector<MapTile>> theMap;
 
 public:
 	Map();
